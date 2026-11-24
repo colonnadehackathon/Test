@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cosmic Stocks · Galaxy</title>
+  <link rel="stylesheet" href="/static/css/space.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="universe">
+    <header class="topbar">
+      <a class="brand" href="/" id="back-link">◂ Back to observatory</a>
+      <div class="who">
+        <button class="btn ghost motion-toggle" type="button" title="Turn space animations on or off">✦ Effects on</button>
+        <span>Commander <strong id="who"></strong></span>
+        <button class="btn ghost" id="logout" type="button">Log out</button>
+      </div>
+    </header>
+
+    <main class="container" id="details">
+      <section class="details-head panel">
+        <div>
+          <div class="symbol" id="d-symbol"></div>
+          <h1 id="d-name"><span class="orbit-loader"></span>Charting course…</h1>
+          <div class="ex" id="d-ex"></div>
+        </div>
+        <div>
+          <div class="big-price" id="d-price"></div>
+          <div class="big-chg" id="d-chg"></div>
+        </div>
+      </section>
+
+      <section class="stats" id="d-stats"></section>
+
+      <section class="chart-panel panel">
+        <h2>Price history · last 30 days</h2>
+        <div class="big-chart"><canvas id="d-chart" role="img" aria-label="30-day price chart"></canvas></div>
+      </section>
+
+      <div class="two-col">
+        <section class="history-panel panel">
+          <h2 class="section-title">Daily log</h2>
+          <div class="table-scroll">
+            <table class="history-table">
+              <thead><tr><th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Close</th><th>Volume</th></tr></thead>
+              <tbody id="d-history"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="news-panel panel">
+          <h2 class="section-title">Transmissions from this galaxy · news</h2>
+          <div class="news-list" id="d-news"><div class="muted"><span class="orbit-loader"></span>Listening for signals…</div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="/static/js/common.js"></script>
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/details.js"></script>
+</body>
+</html>

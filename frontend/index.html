@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cosmic Stocks · Observatory</title>
+  <link rel="stylesheet" href="/static/css/space.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="universe">
+    <header class="topbar">
+      <a class="brand" href="/">✦ Cosmic Stocks</a>
+      <div class="who">
+        <button class="btn ghost motion-toggle" type="button" title="Turn space animations on or off">✦ Effects on</button>
+        <span>Commander <strong id="who"></strong></span>
+        <button class="btn ghost" id="logout" type="button">Log out</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Your Market Observatory</h1>
+        <p>Track companies across the galaxy. Drag ⋮⋮ to reorder, click a row to travel through the black hole.</p>
+      </section>
+
+      <form class="add-bar panel" id="add-form" autocomplete="off" role="search">
+        <input id="add-input" placeholder="Enter a company name or ticker — e.g. Tesla, AMZN, Siemens" aria-label="Company name or ticker"
+               aria-autocomplete="list" aria-controls="suggestions">
+        <button class="btn" type="submit" id="add-btn">Add to orbit +</button>
+        <ul class="suggestions hidden" id="suggestions" role="listbox"></ul>
+      </form>
+
+      <section class="stock-list" id="stock-list" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="/static/js/common.js"></script>
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

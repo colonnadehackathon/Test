@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cosmic Stocks · Sign in</title>
+  <link rel="stylesheet" href="/static/css/space.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <button class="btn ghost motion-toggle corner-toggle" type="button" title="Turn space animations on or off">✦ Effects on</button>
+  <main class="universe auth-wrap">
+    <section class="auth-card panel" aria-labelledby="brand">
+      <div class="planet" aria-hidden="true"></div>
+      <span class="brand" id="brand">Cosmic Stocks</span>
+      <p class="tagline">Chart the markets across the universe</p>
+
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" data-tab="login" class="active">Sign in</button>
+        <button type="button" role="tab" data-tab="signup">Sign up</button>
+        <button type="button" role="tab" data-tab="reset">Reset</button>
+      </div>
+
+      <!-- Sign in -->
+      <form id="login-form" class="auth-form active" autocomplete="on" novalidate>
+        <label for="login-user">Username</label>
+        <input id="login-user" name="username" autocomplete="username" required>
+        <label for="login-pass">Password</label>
+        <input id="login-pass" name="password" type="password" autocomplete="current-password" required>
+        <button class="btn" type="submit">Launch ▸</button>
+        <button class="link-btn" type="button" data-goto="reset">Forgot your password?</button>
+        <div class="error-msg" aria-live="polite"></div>
+      </form>
+
+      <!-- Sign up -->
+      <form id="signup-form" class="auth-form" autocomplete="on" novalidate>
+        <label for="su-user">Choose a username</label>
+        <input id="su-user" name="username" autocomplete="username" minlength="3" maxlength="32" required>
+        <label for="su-pass">Password (min. 6 characters)</label>
+        <input id="su-pass" name="password" type="password" autocomplete="new-password" minlength="6" required>
+        <label for="su-pass2">Repeat password</label>
+        <input id="su-pass2" name="password2" type="password" autocomplete="new-password" required>
+        <label for="su-q">Security question (used to reset your password)</label>
+        <input id="su-q" name="question" placeholder="e.g. Name of my first telescope?" required>
+        <label for="su-a">Answer</label>
+        <input id="su-a" name="answer" autocomplete="off" required>
+        <button class="btn" type="submit">Create account ✦</button>
+        <div class="error-msg" aria-live="polite"></div>
+      </form>
+
+      <!-- Reset -->
+      <form id="reset-form" class="auth-form" novalidate>
+        <label for="rs-user">Username</label>
+        <input id="rs-user" name="username" autocomplete="username" required>
+        <div id="rs-step2" class="hidden">
+          <div class="question-box" id="rs-question"></div>
+          <label for="rs-a">Your answer</label>
+          <input id="rs-a" name="answer" autocomplete="off">
+          <label for="rs-pass">New password</label>
+          <input id="rs-pass" name="password" type="password" autocomplete="new-password">
+          <label for="rs-pass2">Repeat new password</label>
+          <input id="rs-pass2" name="password2" type="password" autocomplete="new-password">
+        </div>
+        <button class="btn" type="submit" id="rs-submit">Show my question</button>
+        <div class="error-msg" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+  <script src="/static/js/common.js"></script>
+  <script src="/static/js/login.js"></script>
+</body>
+</html>
